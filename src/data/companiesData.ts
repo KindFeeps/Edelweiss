@@ -23,7 +23,7 @@ const companiesData: CompanyData[] = [
     founded: "1995",
     acquired: "2023",
     headquarters: "California, USA",
-    website: "https://www.valsoftcorp.com/news/valsoft-corporations-gis-expansion-acquires-top-geographic-info-provider-gbbis/"
+    website: "https://www.gbbis.com/"
   },
   {
     name: "WiSys",
@@ -33,11 +33,11 @@ const companiesData: CompanyData[] = [
     descriptionShort: "Warehouse management software providing visibility in controlling materials and finished goods.",
     descriptionFull: "WiSys provides warehouse management software that offers complete visibility in controlling materials and finished goods.\n\nTheir solutions help businesses optimize warehouse operations, inventory management, and supply chain processes.",
     acquired: "2023",
-    website: "https://www.dpsi.com/"
+    website: "https://www.wisys.com/"
   },
   {
     name: "Pinpoint Global Communications",
-    logo: "/company-logos-svg/pinpoint.png",
+    logo: "/company-logos-svg/pinpoint.jpg",
     industry: "Training and Compliance",
     region: "United States",
     descriptionShort: "Enterprise LMS and compliance software for healthcare, insurance, and financial services.",
@@ -57,7 +57,7 @@ const companiesData: CompanyData[] = [
     founded: "1992",
     acquired: "2023",
     headquarters: "Atlanta, Georgia",
-    website: "https://datatrac.com/"
+    website: "https://www.datatrac.com/"
   },
   {
     name: "Edelweiss",
@@ -72,7 +72,7 @@ const companiesData: CompanyData[] = [
     website: "https://www.abovethetreeline.com/"
   },
   {
-    name: "DP Solutions Inc.",
+    name: "DPSI",
     logo: "/company-logos-svg/dpsi.png",
     industry: "Asset Management",
     region: "United States",
@@ -117,7 +117,7 @@ const companiesData: CompanyData[] = [
     founded: "2004",
     acquired: "2023",
     headquarters: "Bournemouth, United Kingdom",
-    website: "https://www.idgateway.org.uk/"
+    website: "https://www.idgateway.co.uk/"
   }
 ];
 
