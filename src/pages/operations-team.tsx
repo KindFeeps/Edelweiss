@@ -8,6 +8,15 @@ const operations = [
   { name: 'Michelle Lofgren', title: 'Senior HR Business Partner', image: '/team/Michelle.png', linkedin: '' },
   { name: 'Alizée Leizerovici', title: 'Talent Acquisition Business Partner', image: '/team/Alizee.png', linkedin: '' },
   { name: 'Maria Perez', title: 'Head of Marketing', image: '/team/Maria.png', linkedin: '' },
+  // --- Managing Directors ---
+  { name: "David Larsson", title: "Managing Director – Qmatic", image: "/team/david-larsson.jpg", linkedin: "" },
+  { name: "David West", title: "Managing Director – Equinox", image: "/team/david-west.jpg", linkedin: "" },
+  { name: "Donald Beer", title: "Managing Director – Apero", image: "/team/donald-beer.jpg", linkedin: "" },
+  { name: "Edward Williams", title: "Managing Director – Datatrac", image: "/team/edward-williams.jpg", linkedin: "" },
+  { name: "John Rubin", title: "Managing Director – Edelweiss", image: "/team/john-rubin.jpg", linkedin: "" },
+  { name: "Jorge Azpilicueta", title: "Managing Director – GbBIS", image: "/team/jorge-azpilicueta.jpg", linkedin: "" },
+  { name: "Julian Parker", title: "Managing Director – IDGateway", image: "/team/julian-parker.jpg", linkedin: "" },
+  { name: "Rudolph Pataro", title: "Managing Director – Aysling", image: "/team/rudolph-pataro.jpg", linkedin: "" },
 ];
 
 const tabs = [

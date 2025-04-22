@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import TeamPage from './pages/TeamPage';
-import PortfolioPage from './pages/PortfolioPage';
+import PortfolioPage from './pages/portfolio';
 import OperationsTeam from './pages/operations-team';
 import CompanyHoverCardExample from './components/CompanyHoverCardExample';
 

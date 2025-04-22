@@ -5,6 +5,28 @@ import CompanyHoverCard from "./CompanyHoverCard";
 
 import { useState } from "react";
 
+function getLogoPath(baseName: string): string {
+  // Try .svg first, then .png, then .jpg
+  const exts = [".svg", ".png", ".jpg", ".jpeg"];
+  for (const ext of exts) {
+    try {
+      // This will only work for static imports (Next.js, Vite, etc.), otherwise fallback to public
+      // @ts-ignore
+      if (require(`../../public/company-logos-svg/${baseName}${ext}`)) {
+        return `/company-logos-svg/${baseName}${ext}`;
+      }
+    } catch {}
+    // For public folder, just return the first found
+    if (typeof window !== "undefined") {
+      const img = new window.Image();
+      img.src = `/company-logos-svg/${baseName}${ext}`;
+      if (img.complete) return img.src;
+    }
+  }
+  // Default fallback
+  return "/vercel.svg";
+}
+
 export default function PortfolioGrid() {
   const items = [
     {
@@ -22,25 +44,25 @@ export default function PortfolioGrid() {
       year: "2022",
     },
     {
-      logo: "/company-logos-svg/dpsi.png",
+      logo: getLogoPath("dpsi"),
       alt: "DP Solutions Inc. Logo",
       vertical: "Asset Management",
       region: "United States",
       year: "2023",
     },
     {
-      logo: "/company-logos-svg/edelweiss.jpg",
+      logo: getLogoPath("edelweiss"), // supports .svg, .png, .jpg, .jpeg
       alt: "Edelweiss Logo",
-      vertical: "Book Industry Software",
-      region: "United States",
-      year: "2022",
+      vertical: "Financial Services",
+      region: "Switzerland",
+      year: "2020",
     },
     {
-      logo: "/company-logos-svg/equinox.png",
+      logo: getLogoPath("equinox"), // supports .svg, .png, .jpg, .jpeg
       alt: "Equinox Information Systems Logo",
-      vertical: "Telecom",
+      vertical: "Telecommunications",
       region: "United States",
-      year: "2020",
+      year: "2021",
     },
     {
       logo: "/company-logos-svg/gbbis.svg",
@@ -137,7 +159,14 @@ export default function PortfolioGrid() {
               />
             </div>
           ) : (
-            <PortfolioItem key={idx} logo={item.logo} alt={item.alt} />
+            <PortfolioItem
+              key={idx}
+              logo={item.logo}
+              alt={item.alt}
+              vertical={item.vertical}
+              region={item.region}
+              year={item.year}
+            />
           )
         ))}
       </div>

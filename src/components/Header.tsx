@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Dialog } from '@headlessui/react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { clsx } from 'clsx';
@@ -56,17 +56,17 @@ export default function Header() {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-[#FFFFFF]">
-      <nav className="mx-auto max-w-7xl px-6 lg:px-8" aria-label="Global">
-        <div className="flex items-center justify-between h-[64px] px-8">
-          <div className="flex-shrink-0">
+    <>
+      <nav className="fixed top-0 w-full z-50 bg-white/60 backdrop-blur-lg shadow-sm" aria-label="Global">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+
+          <div className="flex items-center space-x-4">
             <Link to="/" className="flex items-center">
               <span className="sr-only">Edelweiss Capital Partners</span>
               <img
-                className="h-[288px] w-auto object-contain p-0 m-0"
+                className="h-[288px] w-auto object-contain"
                 src="/edelweiss-logo.png"
                 alt="Edelweiss Software Group Logo"
-                style={{ maxHeight: '288px', height: '288px', width: 'auto', margin: 0, display: 'block' }}
               />
             </Link>
           </div>
@@ -233,6 +233,6 @@ export default function Header() {
           </div>
         </Dialog.Panel>
       </Dialog>
-    </header>
+    </>
   );
 }
