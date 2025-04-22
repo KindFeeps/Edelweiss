@@ -3,7 +3,7 @@ const companies = [
     name: "Equinox Information Systems",
     alt: "Equinox Information Systems",
     logo: "/company-logos-svg/equinox.png", // updated to match actual file
-    description: "Equinox provides data mediation and analytics tools for fraud management, assurance, and network monitoring.",
+    description: "Equinox provides data mediationn and analytics tools for fraud management, assurance, and network monitoring.",
     vertical: "Telecom",
     region: "United States",
     year: "2023",
