@@ -1,4 +1,4 @@
-import PortfolioGrid from "../components/ui/PortfolioGrid";
+import InteractivePortfolioGrid from "../components/ui/InteractivePortfolioGrid";
 
 export default function PortfolioPage() {
   return (
@@ -8,7 +8,7 @@ export default function PortfolioPage() {
         <p className="mb-8 text-gray-600">
           We operate businesses in over 60 vertical markets across more than 30 countries. Learn more about the 200+ companies that have joined Edelweiss by clicking on the logos below.
         </p>
-        <PortfolioGrid />
+        <InteractivePortfolioGrid />
       </div>
     </main>
   );
