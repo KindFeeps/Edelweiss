@@ -1,124 +1,146 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+"use client";
+import React from "react";
+import PortfolioItem from "@/components/ui/PortfolioItem";
+import CompanyHoverCard from "./CompanyHoverCard";
 
-interface PortfolioItem {
-  name: string;
-  logo: string;
-  industry: string;
-  region: string;
-  link: string;
-}
+import { useState } from "react";
 
-const portfolio: PortfolioItem[] = [
-  {
-    name: 'Equinox Information Systems',
-    logo: '/company-logos/equinox.png',
-    industry: 'Telecom',
-    region: 'United States',
-    link: '/portfolio/equinox-information-systems',
-  },
-  {
-    name: 'GbBIS',
-    logo: '/company-logos/gbbis.png',
-    industry: 'Geospatial',
-    region: 'United States',
-    link: '/portfolio/gbbis',
-  },
-  {
-    name: 'WiSys',
-    logo: '/company-logos/wisys-logo.png',
-    industry: 'Warehouse Management',
-    region: 'United States',
-    link: '/portfolio/wisys',
-  },
-  {
-    name: 'Datatrac',
-    logo: '/company-logos/datatrac-logo.png',
-    industry: 'Logistics',
-    region: 'United States',
-    link: '/portfolio/datatrac',
-  },
-  {
-    name: 'Edelweiss',
-    logo: '/company-logos/edelweiss-logo.png',
-    industry: 'Book Industry Software',
-    region: 'United States',
-    link: '/portfolio/edelweiss',
-  },
-  {
-    name: 'DP Solutions Inc.',
-    logo: '/company-logos/dpsi-logo.png',
-    industry: 'Asset Management',
-    region: 'United States',
-    link: '/portfolio/dp-solutions-inc',
-  },
-  {
-    name: 'Aysling',
-    logo: '/company-logos/aysling-logo.png',
-    industry: 'Broadcast & Media Entertainment',
-    region: 'United States',
-    link: '/portfolio/aysling',
-  },
-  {
-    name: 'Apero Solutions Inc.',
-    logo: '/company-logos/apero-logo.png',
-    industry: 'Enterprise Resource Planning',
-    region: 'Canada',
-    link: '/portfolio/apero-solutions-inc',
-  },
-  {
-    name: 'IDGateway',
-    logo: '/company-logos/idgateway-logo.png',
-    industry: 'Aviation',
-    region: 'United Kingdom',
-    link: '/portfolio/idgateway',
-  },
-  {
-    name: 'Qmatic',
-    logo: '/company-logos/qmatic-logo.png',
-    industry: 'Queue Management',
-    region: 'Sweden',
-    link: '/portfolio/qmatic',
-  },
-  {
-    name: 'Pinpoint Global Communications',
-    logo: '/company-logos/pinpoint-logo.png',
-    industry: 'Training and Compliance',
-    region: 'United States',
-    link: '/portfolio/pinpoint-global-communications',
-  },
-];
+export default function PortfolioGrid() {
+  const items = [
+    {
+      logo: "/company-logos-svg/aysling.svg",
+      alt: "Aysling Logo",
+      vertical: "Broadcast & Media Entertainment",
+      region: "United States",
+      year: "2021",
+    },
+    {
+      logo: "/company-logos-svg/datatrac.svg",
+      alt: "Datatrac Logo",
+      vertical: "Logistics",
+      region: "United States",
+      year: "2022",
+    },
+    {
+      logo: "/company-logos-svg/dpsi.png",
+      alt: "DP Solutions Inc. Logo",
+      vertical: "Asset Management",
+      region: "United States",
+      year: "2023",
+    },
+    {
+      logo: "/company-logos-svg/edelweiss.jpg",
+      alt: "Edelweiss Logo",
+      vertical: "Book Industry Software",
+      region: "United States",
+      year: "2022",
+    },
+    {
+      logo: "/company-logos-svg/equinox.png",
+      alt: "Equinox Information Systems Logo",
+      vertical: "Telecom",
+      region: "United States",
+      year: "2020",
+    },
+    {
+      logo: "/company-logos-svg/gbbis.svg",
+      alt: "GbBIS Logo",
+      vertical: "Geospatial",
+      region: "United States",
+      year: "2023",
+    },
+    {
+      logo: "/company-logos-svg/idg.png",
+      alt: "IDGateway Logo",
+      vertical: "Aviation",
+      region: "United Kingdom",
+      year: "2021",
+    },
+    {
+      logo: "/company-logos-svg/pinpoint.png",
+      alt: "Pinpoint Global Communications Logo",
+      vertical: "Training and Compliance",
+      region: "United States",
+      year: "2022",
+    },
+    {
+      logo: "/company-logos-svg/qmatic.svg",
+      alt: "Qmatic Logo",
+      vertical: "Queue Management",
+      region: "Sweden",
+      year: "2020",
+    },
+  ];
 
-const PortfolioGrid: React.FC = () => {
+  // Extract unique filter values
+  const verticals = ["All", ...Array.from(new Set(items.map(i => i.vertical)))];
+  const regions = ["All", ...Array.from(new Set(items.map(i => i.region)))];
+  const years = ["All", ...Array.from(new Set(items.map(i => i.year)))];
+
+  // Filter state
+  const [vertical, setVertical] = useState("All");
+  const [region, setRegion] = useState("All");
+  const [year, setYear] = useState("All");
+
+  // Filtering logic
+  const filtered = items.filter(item =>
+    (vertical === "All" || item.vertical === vertical) &&
+    (region === "All" || item.region === region) &&
+    (year === "All" || item.year === year)
+  );
+
   return (
-    <div className="portfolio-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {portfolio.map(item => (
-        <div
-          key={item.name}
-          className="relative group w-[250px] h-[250px] flex items-center justify-center border border-gray-200 bg-white overflow-hidden"
-        >
-          <img
-            src={item.logo}
-            alt={item.name}
-            className="grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:-translate-y-3 w-32 h-auto z-10"
-          />
-          {/* Pills fade in and are centered below the logo */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 space-y-2 mt-20 z-0">
-              <div className="flex gap-2 justify-center">
-                <span className="px-3 py-1 text-xs rounded-full bg-[#001F4D] text-white">
-                  {item.industry}
-                </span>
-                <span className="px-3 py-1 text-xs rounded-full bg-[#001F4D] text-white">
-                  {item.region}
-                </span>
-              </div>
-            </div>
-          </div>
+    <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+      {/* Filters */}
+      <div className="flex flex-wrap gap-4 justify-center mb-8">
+        <div>
+          <label className="block text-xs font-semibold mb-1">Vertical Market</label>
+          <select
+            className="border rounded px-3 py-2 min-w-[180px]"
+            value={vertical}
+            onChange={e => setVertical(e.target.value)}
+          >
+            {verticals.map(v => <option key={v}>{v}</option>)}
+          </select>
         </div>
-      ))}
+        <div>
+          <label className="block text-xs font-semibold mb-1">Region</label>
+          <select
+            className="border rounded px-3 py-2 min-w-[150px]"
+            value={region}
+            onChange={e => setRegion(e.target.value)}
+          >
+            {regions.map(r => <option key={r}>{r}</option>)}
+          </select>
+        </div>
+        <div>
+          <label className="block text-xs font-semibold mb-1">Acquisition Year</label>
+          <select
+            className="border rounded px-3 py-2 min-w-[130px]"
+            value={year}
+            onChange={e => setYear(e.target.value)}
+          >
+            {years.map(y => <option key={y}>{y}</option>)}
+          </select>
+        </div>
+      </div>
+
+      {/* Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 py-8">
+        {filtered.map((item, idx) => (
+          item.alt === "Equinox Information Systems Logo" ? (
+            <div key={idx} className="h-full flex items-center justify-center">
+              <CompanyHoverCard
+                logoSrc={item.logo}
+                logoAlt={item.alt}
+                tags={[item.vertical, item.region]}
+              />
+            </div>
+          ) : (
+            <PortfolioItem key={idx} logo={item.logo} alt={item.alt} />
+          )
+        ))}
+      </div>
     </div>
   );
-};
-
-export default PortfolioGrid;
+}

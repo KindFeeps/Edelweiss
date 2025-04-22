@@ -5,6 +5,8 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import TeamPage from './pages/TeamPage';
 import PortfolioPage from './pages/PortfolioPage';
+import OperationsTeam from './pages/operations-team';
+import CompanyHoverCardExample from './components/CompanyHoverCardExample';
 
 export default function App() {
   return (
@@ -17,6 +19,8 @@ export default function App() {
         <Route path="/mergers-acquisitions-team" element={<TeamPage initialTab="ma" />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/operations-team" element={<OperationsTeam />} />
+        <Route path="/company-hover-card-example" element={<CompanyHoverCardExample />} />
       </Routes>
       <Footer />
     </Router>

@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom grayscale and hover effect for portfolio logos */
+.portfolio-logo-img {
+  filter: grayscale(1) brightness(0.7) contrast(1.2) !important;
+  transition: filter 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.portfolio-logo-img:hover {
+  filter: none;
+}

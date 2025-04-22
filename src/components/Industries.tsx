@@ -13,29 +13,29 @@ export default function Industries() {
           style={{ animation: "marquee 30s linear infinite" }}
         >
           {/* ORIGINAL LOGOS */}
-          <img src="/company-logos/apero-solutions-logo.png" alt="Apero Solutions" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/aysling.png" alt="Aysling" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/datatrac.png" alt="Datatrac" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/DPSI-logo.png" alt="DPSI" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/edelweiss.jpg" alt="Edelweiss" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/equinox.png" alt="Equinox" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/gbbis_logo.png" alt="GBBIS Logo" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/idgateway.png" alt="ID Gateway" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/pinpoint-logo.png" alt="Pinpoint" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/qmantic-logo.png" alt="Qmantic" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/wisys-logo.jpg" alt="WiSys" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/apero-solutions.svg" alt="Apero Solutions" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/aysling.svg" alt="Aysling" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/datatrac.svg" alt="Datatrac" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/dpsi.png" alt="DPSI" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/edelweiss.jpg" alt="Edelweiss" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/equinox.png" alt="Equinox" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/gbbis.svg" alt="GBBIS Logo" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/idg.png" alt="ID Gateway" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/pinpoint.png" alt="Pinpoint" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/qmatic.svg" alt="Qmantic" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/wisys.svg" alt="WiSys" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
           {/* DUPLICATE FOR LOOPING */}
-          <img src="/company-logos/apero-solutions-logo.png" alt="Apero Solutions" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/aysling.png" alt="Aysling" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/datatrac.png" alt="Datatrac" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/DPSI-logo.png" alt="DPSI" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/edelweiss.jpg" alt="Edelweiss" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/equinox.png" alt="Equinox" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/gbbis_logo.png" alt="GBBIS Logo" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/idgateway.png" alt="ID Gateway" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/pinpoint-logo.png" alt="Pinpoint" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/qmantic-logo.png" alt="Qmantic" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
-          <img src="/company-logos/wisys-logo.jpg" alt="WiSys" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/apero-solutions.svg" alt="Apero Solutions" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/aysling.svg" alt="Aysling" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/datatrac.svg" alt="Datatrac" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/dpsi.png" alt="DPSI" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/edelweiss.jpg" alt="Edelweiss" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/equinox.png" alt="Equinox" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/gbbis.svg" alt="GBBIS Logo" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/idg.png" alt="ID Gateway" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/pinpoint.png" alt="Pinpoint" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/qmatic.svg" alt="Qmantic" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
+          <img src="/company-logos-svg/wisys.svg" alt="WiSys" className="mx-8 h-[60px] md:h-[80px] w-auto object-contain" />
         </div>
         {/* Hide scrollbars for all browsers */}
         <style>{`

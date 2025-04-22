@@ -19,7 +19,7 @@ const companies: Record<string, Company> = {
     description: 'Equinox provides data mediation and analytics tools for fraud management, assurance, and network monitoring.',
     industry: 'Telecom',
     country: 'United States',
-    logo: 'https://raw.githubusercontent.com/stackblitz/edelweiss/main/companies/equinox-logo.png',
+    logo: '/company-logos/equinox.png',
     website: 'https://www.equinoxis.com/',
     fullDescription: `
       Equinox Information Systems provides data mediation and usage analytics tools for fraud management, business assurance, and network monitoring.

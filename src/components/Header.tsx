@@ -20,6 +20,7 @@ const navigation = [
     items: [
       { name: 'Leadership Team', href: '/leadership-team' },
       { name: 'M&A Team', href: '/mergers-acquisitions-team' },
+      { name: 'Operations Team', href: '/operations-team' },
     ],
   },
   { name: 'Portfolio', href: '/portfolio' },

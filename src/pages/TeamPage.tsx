@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Linkedin, UserCircle } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { clsx } from 'clsx';
 
 interface TeamPageProps {
-  initialTab?: 'leadership' | 'ma';
+  initialTab?: 'leadership' | 'ma' | 'operations';
 }
 
 const tabs = [
   { id: 'leadership', name: 'Leadership Team', href: '/leadership-team' },
   { id: 'ma', name: 'M&A Team', href: '/mergers-acquisitions-team' },
+  { id: 'operations', name: 'Operations Team', href: '/operations-team' },
 ];
 
 const team = {
@@ -25,6 +26,83 @@ const team = {
       role: 'Investment Partner',
       imageUrl: '/team/Anthony.png',
       linkedinUrl: 'https://www.linkedin.com/in/anthonycarusomtl/',
+    },
+    {
+      name: 'Hrag Allahourian',
+      role: 'VP Operations',
+      imageUrl: '', // Placeholder, no image provided
+      linkedinUrl: '',
+    },
+    {
+      name: 'Maksym Gryn',
+      role: 'VP Operations',
+      imageUrl: '', // Placeholder, no image provided
+      linkedinUrl: '',
+    },
+    {
+      name: 'Steve Thomas',
+      role: 'CTO',
+      imageUrl: '', // Placeholder, no image provided
+      linkedinUrl: '',
+    },
+    {
+      name: 'Laurence Archambault',
+      role: 'Head of Finance',
+      imageUrl: '/team/Laurence.png',
+      linkedinUrl: '',
+    },
+
+    {
+      name: 'Michael Halevy',
+      role: 'Director of M&A',
+      imageUrl: '/team/Michael.png',
+      linkedinUrl: 'https://www.linkedin.com/in/michael-halevy/',
+    },
+    {
+      name: 'Evan Chow',
+      role: 'Director of M&A',
+      imageUrl: '/team/Evan.png',
+      linkedinUrl: 'https://www.linkedin.com/in/evan-chow-81043a80/',
+    },
+  ],
+  operations: [
+    {
+      name: 'Steve Thomas',
+      role: 'CTO',
+      imageUrl: '', // Placeholder, no image provided
+      linkedinUrl: '',
+    },
+
+    {
+      name: 'Hrag Allahourian',
+      role: 'VP Operations',
+      imageUrl: '', // Placeholder, no image provided
+      linkedinUrl: '',
+    },
+    {
+      name: 'Maksym Gryn',
+      role: 'VP Operations',
+      imageUrl: '', // Placeholder, no image provided
+      linkedinUrl: '',
+    },
+
+    {
+      name: 'Michelle Lofgren',
+      role: 'Senior HR Business Partner',
+      imageUrl: '', // Placeholder, no image provided
+      linkedinUrl: '',
+    },
+    {
+      name: 'Alizée Leizerovici',
+      role: 'Talent Acquisition Business Partner',
+      imageUrl: '', // Placeholder, no image provided
+      linkedinUrl: '',
+    },
+    {
+      name: 'Maria Perez',
+      role: 'Head of Marketing',
+      imageUrl: '', // Placeholder, no image provided
+      linkedinUrl: '',
     },
   ],
   ma: [
@@ -69,20 +147,20 @@ const team = {
 
 export default function TeamPage({ initialTab }: TeamPageProps) {
   const location = useLocation();
-  const [activeTab, setActiveTab] = useState<'leadership' | 'ma'>(
-    initialTab || (location.pathname === '/mergers-acquisitions-team' ? 'ma' : 'leadership')
+  const [activeTab, setActiveTab] = useState<'leadership' | 'ma' | 'operations'>(
+    initialTab || (location.pathname === '/mergers-acquisitions-team' ? 'ma' : (location.pathname === '/operations-team' ? 'operations' : 'leadership'))
   );
-  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
 
-  const handleImageError = (personName: string) => {
-    setImageErrors(prev => ({ ...prev, [personName]: true }));
-  };
+
+
 
   useEffect(() => {
     if (location.pathname === '/mergers-acquisitions-team') {
       setActiveTab('ma');
     } else if (location.pathname === '/leadership-team') {
       setActiveTab('leadership');
+    } else if (location.pathname === '/operations-team') {
+      setActiveTab('operations');
     }
   }, [location.pathname]);
 
@@ -140,14 +218,13 @@ export default function TeamPage({ initialTab }: TeamPageProps) {
 
           {/* Team Grid */}
           <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
-            {team[activeTab].map((person) => (
+            {(team[activeTab] || []).map((person) => (
               <div key={person.name} className="group relative">
                 <div className="flex flex-col items-center w-full h-full">
   <div className="flex justify-center items-center w-full" style={{height: '200px'}}>
     <img
       src={person.imageUrl}
       alt={person.name}
-      onError={() => handleImageError(person.name)}
       className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
       style={{ width: '300px', height: '200px', objectFit: 'cover', borderRadius: 0, display: 'block', filter: 'grayscale(100%)', transition: 'filter 0.3s ease' }}
       onMouseOver={e => (e.currentTarget.style.filter = 'grayscale(0%)')}

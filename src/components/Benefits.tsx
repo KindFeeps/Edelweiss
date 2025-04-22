@@ -23,6 +23,31 @@ const benefits = [
   },
 ];
 
+// GlowCard component for reuse
+export const StaticBenefitCard = ({
+  title,
+  description,
+  icon: Icon,
+}: {
+  title: string;
+  description: string;
+  icon: React.ElementType;
+}) => {
+  return (
+    <div className="bg-white rounded-xl border border-gray-200 shadow-sm flex items-start gap-4 px-6 py-5 w-full max-w-[420px] mx-auto">
+      <div className="flex-shrink-0">
+        <span className="inline-flex items-center justify-center rounded-full bg-gray-100 w-10 h-10">
+          <Icon className="w-6 h-6 text-primary" aria-hidden="true" />
+        </span>
+      </div>
+      <div className="flex-1">
+        <h3 className="text-base font-bold text-gray-900 mb-1 text-left">{title}</h3>
+        <p className="text-sm text-gray-600 text-left leading-normal">{description}</p>
+      </div>
+    </div>
+  );
+};
+
 export default function Benefits() {
   return (
     <section className="py-24 bg-white">
@@ -41,30 +66,12 @@ export default function Benefits() {
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {benefits.map((benefit) => (
-              <div
+              <StaticBenefitCard
                 key={benefit.title}
-                className="group flex flex-col h-full p-6 rounded-xl bg-white border border-gray-200
-                         transition-all duration-300 hover:bg-[#87CEEB]
-                         hover:border-[#87CEEB]
-                         hover:shadow-[0_0_20px_rgba(135,206,235,0.3)]"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 p-2 rounded-lg bg-[rgba(12,46,91,0.05)] group-hover:bg-white/20 transition-colors duration-300">
-                    <benefit.icon 
-                      className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" 
-                      aria-hidden="true" 
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold leading-7 text-gray-900 group-hover:text-white transition-colors duration-300">
-                      {benefit.title}
-                    </h3>
-                    <p className="mt-3 text-base leading-7 text-gray-600 group-hover:text-white transition-colors duration-300">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
+                title={benefit.title}
+                description={benefit.description}
+                icon={benefit.icon}
+              />
             ))}
           </div>
         </div>
